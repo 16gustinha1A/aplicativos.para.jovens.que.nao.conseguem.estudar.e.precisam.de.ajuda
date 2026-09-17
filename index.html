@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Central de Estudos | Foco & Organização</title>
+  <title>FocusHub | Central do Gustavo</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,125 +11,313 @@
   <nav class="navbar">
     <div class="logo">Focus<span>Hub</span></div>
     <ul class="nav-links">
-      <li><a href="#problema">O Desafio</a></li>
-      <li><a href="#pilares">Organização</a></li>
-      <li><a href="#materiais">Central</a></li>
+      <li><a href="#hub-resumos">Anotações</a></li>
+      <li><a href="#pendencias">Pendências</a></li>
+      <li><a href="#desempenho">Boletim & Notas</a></li>
       <li><a href="#metas">Metas</a></li>
     </ul>
+    <div class="user-profile-pill">
+      <div class="avatar">G</div>
+      <div class="user-info">
+        <span class="user-name">Gustavo</span>
+        <span class="user-status">● Estudando</span>
+      </div>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
+  <!-- Hero / Dashboard do Estudante Logado -->
+  <header class="hero dashboard-hero">
     <div class="hero-content">
-      <span class="badge">Protótipo de Produtividade</span>
-      <h1>Estude sem perder o controle dos seus materiais</h1>
+      <span class="badge">Painel Pessoal</span>
+      <h1>Bem-vindo de volta, Gustavo! 👋</h1>
       <p>
-        Elimine o atrito de alternar entre cadernos, PDFs e abas infinitas. 
-        Sua rotina centralizada em um ambiente escuro, fluido e sem distrações.
+        Seus materiais, cronogramas e anotações unificados em um único espaço. 
+        Aqui está o resumo da sua rotina acadêmica para hoje:
       </p>
-      <div class="hero-actions">
-        <a href="#materiais" class="btn btn-primary">Acessar Materiais</a>
-        <a href="#problema" class="btn btn-secondary">Entender a Dor</a>
+
+      <!-- Dashboard Stats Quick Bar -->
+      <div class="quick-stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">Média Geral</span>
+          <span class="stat-value highlight-green">8.8</span>
+          <span class="stat-sub">4 matérias ativas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Pendências Urgentes</span>
+          <span class="stat-value highlight-purple">3</span>
+          <span class="stat-sub">Para os próximos 5 dias</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Cadernos Sincronizados</span>
+          <span class="stat-value highlight-cyan">12 pág.</span>
+          <span class="stat-sub">Último scan ontem</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Seção O Problema -->
-  <section id="problema" class="section">
-    <h2 class="section-title">O Diagnóstico do Problema</h2>
-    <p class="section-subtitle">
-      Alternar entre arquivos físicos e digitais fragmenta seu foco e consome sua energia antes mesmo do estudo começar.
-    </p>
+  <!-- SEÇÃO 1: HUB INTERATIVO DE ANOTAÇÕES & RESUMOS -->
+  <section id="hub-resumos" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Central de Anotações & Resumos</h2>
+      <p class="section-subtitle">Anotações digitais integradas diretamente aos tópicos dos seus cadernos físicos.</p>
+    </div>
 
-    <div class="grid-cards">
-      <div class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Fadiga de Decisão</h3>
-        <p>Gastar até 30 minutos buscando onde uma informação foi anotada consome o foco primário do cérebro.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📁</div>
-        <h3>Informação Dispersa</h3>
-        <p>Anotações em cadernos, PDFs no Drive e links em chats geram a sensação de permanente descontrole.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📉</div>
-        <h3>Abandono de Metas</h3>
-        <p>A alta fricção para organizar as fontes faz você desistir do planejamento diário logo no início.</p>
+    <!-- Barra de busca e filtros fictícios -->
+    <div class="hub-controls">
+      <input type="text" class="search-input" placeholder="🔍 Buscar em resumos, cadernos ou tags..." disabled value="Estruturas de Dados..." />
+      <div class="filter-chips">
+        <button class="chip active">Todas</button>
+        <button class="chip">Algoritmos</button>
+        <button class="chip">Cálculo</button>
+        <button class="chip">Física</button>
       </div>
     </div>
-  </section>
 
-  <!-- Seção Pilares / Centralização -->
-  <section id="pilares" class="section bg-alt">
-    <h2 class="section-title">Fluxo Sem Atrito</h2>
-    <div class="split-view">
-      <div class="split-text">
-        <h3>Unificação de Fontes</h3>
-        <p>
-          Em vez de abrir dezenas de guias e cadernos, visualize todas as disciplinas, notas digitais e lembretes de cadernos físicos em uma linha do tempo contínua.
+    <div class="grid-cards hub-grid">
+      <!-- Card Resumo 1 -->
+      <div class="card hub-card">
+        <div class="card-top">
+          <span class="tag digital">Digital + Caderno</span>
+          <span class="date-tag">Editado há 2h</span>
+        </div>
+        <h3>Arvores Binárias e Grafos</h3>
+        <p class="discipline">Disciplina: Algoritmos e Estruturas de Dados</p>
+        <p class="card-preview">
+          Resumo em Markdown com código em C++ + Anotações do <strong>Caderno Físico 02, Páginas 14-18</strong>.
         </p>
-        <ul class="check-list">
-          <li>✓ Redução de cliques e transições de tela</li>
-          <li>✓ Interface otimizada para longas sessões noturnas</li>
-          <li>✓ Transição fluida entre visão geral e detalhes</li>
-        </ul>
+        <div class="card-footer-meta">
+          <span class="attachment-count">📎 2 PDFs · 1 PhotoScan</span>
+          <button class="btn-action">Abrir Resumo</button>
+        </div>
       </div>
-      <div class="split-graphic">
-        <div class="mockup-window">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <div class="mockup-body">
-            <div class="skeleton-line"></div>
-            <div class="skeleton-box"></div>
-            <div class="skeleton-box short"></div>
-          </div>
+
+      <!-- Card Resumo 2 -->
+      <div class="card hub-card">
+        <div class="card-top">
+          <span class="tag physical">Scan Físico</span>
+          <span class="date-tag">Ontem</span>
+        </div>
+        <h3>Cálculo III - Derivadas Parciais</h3>
+        <p class="discipline">Disciplina: Matemática Aplicada</p>
+        <p class="card-preview">
+          Formulário escaneado e organizado em blocos conceituais. Destaque para regras de cadeia e vetores gradientes.
+        </p>
+        <div class="card-footer-meta">
+          <span class="attachment-count">📎 Caderno 01, Pág. 32</span>
+          <button class="btn-action">Abrir Resumo</button>
+        </div>
+      </div>
+
+      <!-- Card Resumo 3 -->
+      <div class="card hub-card">
+        <div class="card-top">
+          <span class="tag digital">Digital</span>
+          <span class="date-tag">3 dias atrás</span>
+        </div>
+        <h3>Termodinâmica & Leis de Conservação</h3>
+        <p class="discipline">Disciplina: Física Geral II</p>
+        <p class="card-preview">
+          Sintese dos slides da aula 05 com destaques dos exercícios resolvidos em sala pelo professor.
+        </p>
+        <div class="card-footer-meta">
+          <span class="attachment-count">📎 3 Slides (.pdf)</span>
+          <button class="btn-action">Abrir Resumo</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção Central de Materiais -->
-  <section id="materiais" class="section">
-    <h2 class="section-title">Central Unificada de Materiais</h2>
-    <div class="grid-cards">
-      <div class="card interactive">
-        <span class="tag">Digital</span>
-        <h3>Anotações & Resumos</h3>
-        <p>PDFs, documentos e links organizados por matéria e prioridade de revisão.</p>
-        <button class="card-btn">Abrir Hub &rarr;</button>
+  <!-- SEÇÃO 2: ABA DE PENDÊNCIAS, SLIDES E ATIVIDADES -->
+  <section id="pendencias" class="section bg-alt">
+    <div class="section-header">
+      <h2 class="section-title">Pendências e Atividades</h2>
+      <p class="section-subtitle">Acompanhe entregas, slides pendentes de leitura e compromissos da semana.</p>
+    </div>
+
+    <div class="pendencias-container">
+      <!-- Item de Pendência 1 (Urgente) -->
+      <div class="pendencia-item status-urgent">
+        <div class="status-indicator"></div>
+        <div class="pendencia-info">
+          <div class="pendencia-header">
+            <h4>Entrega do Lista de Exercícios 04 - Derivadas</h4>
+            <span class="deadline urgent">Prazo: Amanhã às 23:59</span>
+          </div>
+          <p class="pendencia-sub">Cálculo III • Enviar PDF no portal acadêmico</p>
+          <div class="pendencia-links">
+            <span class="link-badge">📄 Lista_04.pdf</span>
+            <span class="link-badge">📘 Ver notas no caderno (Pág. 40)</span>
+          </div>
+        </div>
+        <div class="pendencia-action">
+          <button class="btn-check">Concluir Task</button>
+        </div>
       </div>
-      <div class="card interactive">
-        <span class="tag">Físico</span>
-        <h3>Registro de Cadernos</h3>
-        <p>Mapeamento de páginas e tópicos anotados à mão para consulta rápida.</p>
-        <button class="card-btn">Mapear Notas &rarr;</button>
+
+      <!-- Item de Pendência 2 (Médio) -->
+      <div class="pendencia-item status-warning">
+        <div class="status-indicator"></div>
+        <div class="pendencia-info">
+          <div class="pendencia-header">
+            <h4>Revisar Slides: Arquitetura de Barramentos</h4>
+            <span class="deadline warning">Prazo: Quinta-feira</span>
+          </div>
+          <p class="pendencia-sub">Organização de Computadores • Leitura prévia obrigatória</p>
+          <div class="pendencia-links">
+            <span class="link-badge">📊 Aula_08_Barramentos.pptx</span>
+          </div>
+        </div>
+        <div class="pendencia-action">
+          <button class="btn-check">Concluir Task</button>
+        </div>
       </div>
-      <div class="card interactive">
-        <span class="tag">Aulas</span>
-        <h3>Slides & Atividades</h3>
-        <p>Entregas pendentes e conteúdos recebidos de professores ou grupos.</p>
-        <button class="card-btn">Ver Pendências &rarr;</button>
+
+      <!-- Item de Pendência 3 (Tranquilo) -->
+      <div class="pendencia-item status-normal">
+        <div class="status-indicator"></div>
+        <div class="pendencia-info">
+          <div class="pendencia-header">
+            <h4>Projeto em Grupo: Protótipo de Banco de Dados</h4>
+            <span class="deadline">Prazo: Em 10 dias</span>
+          </div>
+          <p class="pendencia-sub">Sistemas de Informação • Definir modelo conceitual E-R</p>
+          <div class="pendencia-links">
+            <span class="link-badge">🔗 Documento do Google Docs</span>
+            <span class="link-badge">💬 Chat do Grupo</span>
+          </div>
+        </div>
+        <div class="pendencia-action">
+          <button class="btn-check">Concluir Task</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção Metas -->
+  <!-- SEÇÃO 3: DESEMPENHO E BOLETIM DE NOTAS DO GUSTAVO -->
+  <section id="desempenho" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Boletim de Desempenho</h2>
+      <p class="section-subtitle">Visualização clara das suas avaliações para você saber onde precisa focar mais tempo.</p>
+    </div>
+
+    <div class="grades-grid">
+      <!-- Matéria 1 -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <h3>Algoritmos e Estruturas de Dados</h3>
+          <span class="grade-badge grade-high">9.5</span>
+        </div>
+        <p class="grade-status">Excelente desempenho • Foco mantido</p>
+        <div class="grade-details">
+          <div class="grade-row">
+            <span>Prova 01 (Teórica):</span>
+            <strong>9.0</strong>
+          </div>
+          <div class="grade-row">
+            <span>Trabalho Prático (C++):</span>
+            <strong>10.0</strong>
+          </div>
+        </div>
+        <div class="grade-bar-bg">
+          <div class="grade-bar-fill" style="width: 95%;"></div>
+        </div>
+      </div>
+
+      <!-- Matéria 2 -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <h3>Matemática Aplicada (Cálculo)</h3>
+          <span class="grade-badge grade-mid">7.2</span>
+        </div>
+        <p class="grade-status">Atenção recomendada para as próximas provas</p>
+        <div class="grade-details">
+          <div class="grade-row">
+            <span>Prova 01:</span>
+            <strong>6.5</strong>
+          </div>
+          <div class="grade-row">
+            <span>Listas de Exercícios:</span>
+            <strong>8.0</strong>
+          </div>
+        </div>
+        <div class="grade-bar-bg">
+          <div class="grade-bar-fill warning-fill" style="width: 72%;"></div>
+        </div>
+      </div>
+
+      <!-- Matéria 3 -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <h3>Física Geral II</h3>
+          <span class="grade-badge grade-mid-high">8.5</span>
+        </div>
+        <p class="grade-status">Bom progresso acumulado</p>
+        <div class="grade-details">
+          <div class="grade-row">
+            <span>Relatório de Laboratório:</span>
+            <strong>8.8</strong>
+          </div>
+          <div class="grade-row">
+            <span>Prova P1:</span>
+            <strong>8.2</strong>
+          </div>
+        </div>
+        <div class="grade-bar-bg">
+          <div class="grade-bar-fill" style="width: 85%;"></div>
+        </div>
+      </div>
+
+      <!-- Matéria 4 -->
+      <div class="grade-card">
+        <div class="grade-header">
+          <h3>Sistemas de Informação</h3>
+          <span class="grade-badge grade-high">10.0</span>
+        </div>
+        <p class="grade-status">Nota máxima na primeira etapa</p>
+        <div class="grade-details">
+          <div class="grade-row">
+            <span>Apresentação de Seminário:</span>
+            <strong>10.0</strong>
+          </div>
+          <div class="grade-row">
+            <span>Participação em Aula:</span>
+            <strong>10.0</strong>
+          </div>
+        </div>
+        <div class="grade-bar-bg">
+          <div class="grade-bar-fill" style="width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: METAS DIÁRIAS DO GUSTAVO -->
   <section id="metas" class="section bg-alt">
-    <h2 class="section-title">Acompanhamento Sem Ansiedade</h2>
+    <div class="section-header">
+      <h2 class="section-title">Progresso Diário do Gustavo</h2>
+      <p class="section-subtitle">Ritmo constante sem sobrecarga mental.</p>
+    </div>
+
     <div class="tracker-container">
       <div class="tracker-card">
-        <h4>Meta do Dia</h4>
+        <div class="tracker-header">
+          <h4>Meta de Estudos de Hoje</h4>
+          <span class="tracker-percent">75% Concluído</span>
+        </div>
         <div class="progress-bar">
           <div class="progress-fill"></div>
         </div>
-        <p>3 de 4 matérias revisadas hoje sem dispersão.</p>
+        <p class="tracker-info">
+          ✅ 3 de 4 tarefas concluídas hoje. Resta apenas revisar a lista de Cálculo III.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Rodapé -->
   <footer>
-    <p>FocusHub &copy; 2026 — Protótipo focado em ergonomia visual e alta fluidez para estudantes.</p>
+    <p>FocusHub &copy; 2026 — Conta do Estudante: Gustavo • Painel de Estudos Otimizado</p>
   </footer>
 </body>
 </html>
