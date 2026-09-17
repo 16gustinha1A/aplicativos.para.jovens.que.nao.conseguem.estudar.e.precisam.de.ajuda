@@ -1,0 +1,1 @@
+# aplicativos.para.jovens.que.nao.conseguem.estudar.e.precisam.de.ajuda
