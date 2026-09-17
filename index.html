@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Elementos de Iluminação Neon para Estilização Dark Avançada -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
   <!-- Navegação Fixa -->
   <nav class="navbar">
     <div class="logo">Focus<span>Hub</span></div>
@@ -24,14 +28,13 @@
     </div>
   </nav>
 
-  <!-- Hero / Dashboard do Estudante Logado -->
+  <!-- Hero / Dashboard do Gustavo -->
   <header class="hero dashboard-hero">
     <div class="hero-content">
       <span class="badge">Painel Pessoal</span>
       <h1>Bem-vindo de volta, Gustavo! 👋</h1>
       <p>
-        Seus materiais, cronogramas e anotações unificados em um único espaço. 
-        Aqui está o resumo da sua rotina acadêmica para hoje:
+        Seus materiais, cronogramas e anotações unificados em um único espaço com estética ultramoderna.
       </p>
 
       <!-- Dashboard Stats Quick Bar -->
@@ -55,21 +58,21 @@
     </div>
   </header>
 
-  <!-- SEÇÃO 1: HUB INTERATIVO DE ANOTAÇÕES & RESUMOS -->
+  <!-- SEÇÃO 1: HUB INTERATIVO DE ANOTAÇÕES & RESUMOS COM POP-UPS -->
   <section id="hub-resumos" class="section">
     <div class="section-header">
       <h2 class="section-title">Central de Anotações & Resumos</h2>
-      <p class="section-subtitle">Anotações digitais integradas diretamente aos tópicos dos seus cadernos físicos.</p>
+      <p class="section-subtitle">Anotações digitais integradas aos seus cadernos. Clique nos filtros para abrir a visão detalhada da matéria.</p>
     </div>
 
-    <!-- Barra de busca e filtros -->
+    <!-- Barra de busca e Filtros com Modal (Pop-up) -->
     <div class="hub-controls">
       <input type="text" class="search-input" placeholder="🔍 Buscar em resumos, cadernos ou tags..." disabled value="Estruturas de Dados..." />
       <div class="filter-chips">
-        <button class="chip active">Todas</button>
-        <button class="chip">Algoritmos</button>
-        <button class="chip">Cálculo</button>
-        <button class="chip">Física</button>
+        <a href="#hub-resumos" class="chip active">Todas</a>
+        <a href="#modal-algoritmos" class="chip glow-chip">Algoritmos</a>
+        <a href="#modal-calculo" class="chip glow-chip">Cálculo</a>
+        <a href="#modal-fisica" class="chip glow-chip">Física</a>
       </div>
     </div>
 
@@ -80,14 +83,14 @@
           <span class="tag digital">Digital + Caderno</span>
           <span class="date-tag">Editado há 2h</span>
         </div>
-        <h3>Arvores Binárias e Grafos</h3>
+        <h3>Árvores Binárias e Grafos</h3>
         <p class="discipline">Disciplina: Algoritmos e Estruturas de Dados</p>
         <p class="card-preview">
           Resumo em Markdown com código em C++ + Anotações do <strong>Caderno Físico 02, Páginas 14-18</strong>.
         </p>
         <div class="card-footer-meta">
           <span class="attachment-count">📎 2 PDFs · 1 PhotoScan</span>
-          <button class="btn-action">Abrir Resumo</button>
+          <a href="#modal-algoritmos" class="btn-action">Abrir Detalhes</a>
         </div>
       </div>
 
@@ -104,7 +107,7 @@
         </p>
         <div class="card-footer-meta">
           <span class="attachment-count">📎 Caderno 01, Pág. 32</span>
-          <button class="btn-action">Abrir Resumo</button>
+          <a href="#modal-calculo" class="btn-action">Abrir Detalhes</a>
         </div>
       </div>
 
@@ -121,13 +124,81 @@
         </p>
         <div class="card-footer-meta">
           <span class="attachment-count">📎 3 Slides (.pdf)</span>
-          <button class="btn-action">Abrir Resumo</button>
+          <a href="#modal-fisica" class="btn-action">Abrir Detalhes</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO 2: ABA DE PENDÊNCIAS, SLIDES E ATIVIDADES -->
+  <!-- ==================== MODAIS / POP-UPS (PURE CSS) ==================== -->
+  
+  <!-- Pop-up Algoritmos -->
+  <div id="modal-algoritmos" class="modal-overlay">
+    <div class="modal-card">
+      <a href="#hub-resumos" class="modal-close">&times;</a>
+      <span class="tag digital">Matéria: Algoritmos</span>
+      <h2>Algoritmos e Estruturas de Dados</h2>
+      <p class="modal-subtitle">Resumo das Árvores Binárias e Grafos</p>
+      <hr class="modal-divider">
+      <div class="modal-body">
+        <h4>📋 Conteúdos Sincronizados:</h4>
+        <ul class="modal-list">
+          <li><strong>Caderno Físico:</strong> Páginas 14 até 18 (Busca em Profundidade e Largura)</li>
+          <li><strong>Arquivo Digital:</strong> <code>árvores_binarias.cpp</code> com testes unitários</li>
+          <li><strong>Média Atual na Matéria:</strong> <span class="highlight-green">9.5</span></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#hub-resumos" class="btn-primary-modal">Fechar Pop-up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up Cálculo -->
+  <div id="modal-calculo" class="modal-overlay">
+    <div class="modal-card">
+      <a href="#hub-resumos" class="modal-close">&times;</a>
+      <span class="tag physical">Matéria: Cálculo</span>
+      <h2>Matemática Aplicada (Cálculo III)</h2>
+      <p class="modal-subtitle">Fórmula de Derivadas Parciais e Vetor Gradiente</p>
+      <hr class="modal-divider">
+      <div class="modal-body">
+        <h4>📋 Conteúdos Sincronizados:</h4>
+        <ul class="modal-list">
+          <li><strong>Caderno Físico:</strong> Página 32 (Fórmulas do Vetor Gradiente)</li>
+          <li><strong>Material Digital:</strong> Lista_04_Derivadas.pdf</li>
+          <li><strong>Média Atual na Matéria:</strong> <span class="highlight-amber">7.2</span> (Foco nas listas de revisão)</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#hub-resumos" class="btn-primary-modal">Fechar Pop-up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up Física -->
+  <div id="modal-fisica" class="modal-overlay">
+    <div class="modal-card">
+      <a href="#hub-resumos" class="modal-close">&times;</a>
+      <span class="tag digital">Matéria: Física</span>
+      <h2>Física Geral II</h2>
+      <p class="modal-subtitle">Termodinâmica e Leis de Conservação de Energia</p>
+      <hr class="modal-divider">
+      <div class="modal-body">
+        <h4>📋 Conteúdos Sincronizados:</h4>
+        <ul class="modal-list">
+          <li><strong>Slide do Professor:</strong> Aula_05_Termodinâmica.pdf</li>
+          <li><strong>Anotações Práticas:</strong> Relatório do Laboratório de Física</li>
+          <li><strong>Média Atual na Matéria:</strong> <span class="highlight-cyan">8.5</span></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#hub-resumos" class="btn-primary-modal">Fechar Pop-up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO 2: PENDÊNCIAS E ATIVIDADES -->
   <section id="pendencias" class="section bg-alt">
     <div class="section-header">
       <h2 class="section-title">Pendências e Atividades</h2>
@@ -135,15 +206,14 @@
     </div>
 
     <div class="pendencias-container">
-      <!-- Item de Pendência 1 (Urgente) -->
       <div class="pendencia-item status-urgent">
         <div class="status-indicator"></div>
         <div class="pendencia-info">
           <div class="pendencia-header">
-            <h4>Entrega do Lista de Exercícios 04 - Derivadas</h4>
+            <h4>Entrega da Lista de Exercícios 04 - Derivadas</h4>
             <span class="deadline urgent">Prazo: Amanhã às 23:59</span>
           </div>
-          <p class="pendencia-sub">Cálculo III • Enviar PDF no portal acadêmico</p>
+          <p class="pendencia-sub">Cálculo III • Enviar PDF no portal acadômico</p>
           <div class="pendencia-links">
             <span class="link-badge">📄 Lista_04.pdf</span>
             <span class="link-badge">📘 Ver notas no caderno (Pág. 40)</span>
@@ -157,7 +227,6 @@
         </div>
       </div>
 
-      <!-- Item de Pendência 2 (Médio) -->
       <div class="pendencia-item status-warning">
         <div class="status-indicator"></div>
         <div class="pendencia-info">
@@ -178,7 +247,6 @@
         </div>
       </div>
 
-      <!-- Item de Pendência 3 (Tranquilo) -->
       <div class="pendencia-item status-normal">
         <div class="status-indicator"></div>
         <div class="pendencia-info">
@@ -202,15 +270,14 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 3: DESEMPENHO E BOLETIM DE NOTAS DO GUSTAVO -->
+  <!-- SEÇÃO 3: DESEMPENHO E BOLETIM DE NOTAS -->
   <section id="desempenho" class="section">
     <div class="section-header">
       <h2 class="section-title">Boletim de Desempenho</h2>
-      <p class="section-subtitle">Visualização clara das suas avaliações para você saber onde precisa focar mais tempo.</p>
+      <p class="section-subtitle">Visualização clara das suas avaliações para focar no que realmente importa.</p>
     </div>
 
     <div class="grades-grid">
-      <!-- Matéria 1 -->
       <div class="grade-card">
         <div class="grade-header">
           <h3>Algoritmos e Estruturas de Dados</h3>
@@ -232,7 +299,6 @@
         </div>
       </div>
 
-      <!-- Matéria 2 -->
       <div class="grade-card">
         <div class="grade-header">
           <h3>Matemática Aplicada (Cálculo)</h3>
@@ -254,7 +320,6 @@
         </div>
       </div>
 
-      <!-- Matéria 3 -->
       <div class="grade-card">
         <div class="grade-header">
           <h3>Física Geral II</h3>
@@ -276,7 +341,6 @@
         </div>
       </div>
 
-      <!-- Matéria 4 -->
       <div class="grade-card">
         <div class="grade-header">
           <h3>Sistemas de Informação</h3>
@@ -300,7 +364,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO 4: METAS DIÁRIAS DO GUSTAVO -->
+  <!-- SEÇÃO 4: METAS DIÁRIAS -->
   <section id="metas" class="section bg-alt">
     <div class="section-header">
       <h2 class="section-title">Progresso Diário do Gustavo</h2>
@@ -323,7 +387,6 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer>
     <p>FocusHub &copy; 2026 — Conta do Estudante: Gustavo • Painel de Estudos Otimizado</p>
   </footer>
